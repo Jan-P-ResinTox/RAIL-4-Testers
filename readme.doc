@@ -1,0 +1,21 @@
+## What this is and how it came to be:
+The rapid adoption of Large Language Models (LLMs) in clinical and regulatory research has introduced significant risks regarding "hallucinations"
+and the erosion of citation integrity. RAIL (ResinTox Augmented Intelligence Layer) is an application framework designed to enforce empirical traceability. 
+By integrating a "tethered" storage architecture—allowing researchers to alternate between private local caches and synchronized cloud repositories — RAIL
+can provide a verifiable Training Index for high-stakes intelligence gathering in fields such as toxicology, pharmacology, and regulatory science.
+
+The RAIL-JS.html can be copied and pasted to run from any server, locally hosted web page or in an electron-app against a local or distributed llm-server of choice by entering a valid host. If you want to test against ResinTox RAIL-server and internal engine, that can be arranged - but setting up your own local server is highly recommended.
+
+## IMPORTANT NOTE
+The software, as is, is free to use for TESTING, REVIEW and further DEVELOPMENT. There are NO claims that this is a FULLY FUNCTIONING software that has been stress tested in different fields or in a large number of settings or situations at this time.
+
+## Scientific Purpose & Scope
+This repository serves as the official interactive **Proof of Concept (PoC)** and architectural simulator for the framework proposed in the paper: *"The Cognitive Exoskeleton: A Structured Pipeline for Augmented Intelligence in Scientific Formulation and Evidence Synthesis"* (Nilsson, 2026).
+
+Rather than providing a production-ready Python backend, this client-side environment acts as a sandboxed **existence proof**. It visually and programmatically simulates how deterministic syntactic constraints, strict schema enforcement, and an Interactive Evidence Matrix can eliminate AI automation bias and prevent logical drift in high-stakes regulatory science.
+
+
+Licence:
+Creative Commons Attribution 4.0 International Public License (https://creativecommons.org)
+
+Copyright (c) 2026 Jan-Peter Nilsson - ResinTox
