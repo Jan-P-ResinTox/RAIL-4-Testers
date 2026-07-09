@@ -1158,6 +1158,14 @@
             <p style="line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
                 RAIL is a "bring-your-own-intelligence" platform. It provides the advanced scaffolding, but you provide the engine and the fuel. This ensures your private research data isn't leaked into generic model training loops.
             </p>
+            <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.25); padding: 1.1rem 1.25rem; border-radius: 0.5rem; margin-bottom: 1.5rem; line-height: 1.6; color: var(--text-secondary); font-size: 0.85rem;">
+                <strong style="color: #f87171; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">🔒 CRITICAL SECURITY POLICY: API Key Usage Constraints</strong>
+                For compliance with strict clinical data management practices and sandbox-isolated preview safety during this experimental development phase:
+                <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; margin-top: 0.4rem; list-style-type: square; color: #e4e4e7;">
+                    <li><strong>Unpaid & Restricted Keys Only:</strong> Users are highly urged to only connect <strong>unpaid, restricted, or temporary trial-tier API keys</strong>. Never input production-grade keys with active corporate billing accounts or elevated organizational privileges.</li>
+                    <li><strong>Sandbox Environment Notice:</strong> While keys are kept strictly within your local browser sandbox memory and are never transmitted to RAIL's developer logs, standard client-side browser runtimes should not be treated as cryptographically hardened vaults for high-value enterprise keys.</li>
+                </ul>
+            </div>
             <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
                 <h4 style="color: #34d399; margin-bottom: 0.5rem; font-size: 0.9rem;">Exact Procedure to Connect to Commercial AI Services:</h4>
                 <ol style="line-height: 1.6; color: var(--text-secondary); margin-left: 1.25rem; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
@@ -1250,11 +1258,22 @@
             <p style="line-height: 1.6; color: var(--text-secondary); margin-bottom: 1rem;">
                 RAIL uses <strong>Computational Safeguards</strong> to ensure the model doesn't drift.
             </p>
-            <ul style="line-height: 1.6; color: var(--text-secondary); margin-left: 1.5rem;">
+            <ul style="line-height: 1.6; color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem;">
                 <li style="margin-bottom: 0.5rem;"><strong>Semantic Drift Protection:</strong> The AI checks its own answers against the original abstract/summary. If it starts to wander into generic AI tropes, the audit log will flag a "Context Dissociation" event.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Logic Auditor:</strong> Performs a secondary pass on any mathematical claims. If the model claims 10/20 is 5%, the Auditor will block the output.</li>
-                <li><strong>Zero-Shot Prohibition:</strong> The ultimate safety. If the facts aren't in your document or KB, the AI is physically forbidden from answering.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Logic Auditor:</strong> Performs a secondary pass on any mathematical claims. If the model claims 10/20 is 5%, the Auditor will block or flag the output.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Zero-Shot Prohibition:</strong> The ultimate safety. If the facts aren't in your document or KB, the AI is physically forbidden from answering.</li>
             </ul>
+
+            <div style="background: rgba(96, 165, 250, 0.05); border: 1px solid rgba(96, 165, 250, 0.2); padding: 1.2rem; border-radius: 0.5rem; margin-bottom: 1rem; line-height: 1.6; color: var(--text-secondary); font-size: 0.85rem;">
+                <strong style="color: #60a5fa; display: block; margin-bottom: 0.5rem;">⚠️ Prototype Notice & Transparency Disclosure</strong>
+                RAIL is currently operating in <strong>Proof-of-Concept (PoC) / Prototyping Mode</strong>. For full scientific transparency, please note:
+                <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.8rem; margin-top: 0.5rem; list-style-type: square;">
+                    <li><strong>Simulated Mathematics & Metric Heuristics:</strong> Highly complex formulas, such as the Angular Drift Distance (S_drift) and Priority Index (PI), are modeled as <em>conceptual heuristic pipelines</em> utilizing prompt-guided constraints. The metrics shown represent simulated logical boundaries designed to demonstrate the feasibility of the system. They do not yet connect to isolated mathematical execution servers or formal theorem provers (e.g., Lean or Coq).</li>
+                    <li><strong>Programmatic Heuristic Guardrails:</strong> The Logic Auditor uses local, client-side regex engines to parse and verify arithmetic assertions (such as percentage proportions, addition, and multiplication) directly within generated text. While robust for standard extraction tasks, complex algebraic equations, multidimensional calculus, and statistical distributions are handled via the LLM's intrinsic probabilistic reasoning and should be manually verified by the user.</li>
+                    <li><strong>Production Grade Recommendations:</strong> For production-scale scientific workflows, RAIL recommends interfacing with formal logic solvers, symbolic calculators (e.g., WolframAlpha API), or specialized sandboxed execution kernels to verify complex mathematical proofs before clinical translation.</li>
+                    <li><strong>Planned Backend Math Server Integration (Roadmap):</strong> In a post-prototype clinical release, RAIL's architecture specifies a clear transition of these metric systems to dedicated server-side computational engines. Highly complex arithmetic, algebraic equations, and statistical metrics will be offloaded to dedicated backend math servers executing sandbox-isolated Python symbolic calculation libraries or querying authorized WolframAlpha APIs. This future logic tier will operate entirely out-of-band from the LLM, transforming simulated prompt-driven heuristic outputs into hard-verified, deterministic scientific calculations suitable for publication-level toxicological evidence.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="manual-data-viewer" style="margin-bottom: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
@@ -1294,7 +1313,7 @@
             </div>
 
             <ul style="line-height: 1.6; color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1rem;">
-                <li style="margin-bottom: 0.5rem;"><strong>Database Engines:</strong> RAIL supports dual-mode storage. <strong>LocalStorage</strong> is ideal for standalone application use (private, fast, no cloud connectivity required). <strong>Firebase Cloud</strong> is designed for authorized server-based implementations where research datasets need to be synchronized across devices. Note that standalone applications are not natively designed to interface with Firebase; connecting them may require additional manual configuration. For full cloud integration, the online hosted version of RAIL is recommended.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Database Engines:</strong> RAIL supports dual-mode storage. <strong>LocalStorage</strong> is ideal for standalone application use (private, fast, no cloud connectivity required). <strong>Firebase Cloud</strong> is designed for authorized server-based implementations where research datasets need to be synchronized across devices. <em>Security Policy Note:</em> Standalone browser-based environments connecting directly to Firebase Cloud can trigger <strong>CORS and Mixed Content</strong> blocks due to strict origin and secure connection restrictions. To bypass these restrictions, you can either run RAIL in an <strong>Electron container with Node.js integration</strong> enabled (allowing direct socket communication) or deploy an intermediate <strong>reverse proxy (such as Nginx)</strong> to relay secure requests. For standard out-of-the-box cloud integration, the online hosted version of RAIL is recommended.</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Knowledge Miner:</strong> Search the web for specific papers. Use the <code>(PM)</code> prefix (e.g., <code>(PM) glyphosate toxicity</code>) to connect directly to <strong>NCBI PubMed</strong> for authoritative abstracts without needing a web search key.</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Selective Indexing:</strong> Check the checkboxes for data points you trust before committing them to your Index.</li>
                 <li style="margin-bottom: 0.5rem;"><strong>Register-Style Retrieval:</strong> Instead of dumping everything into the context (which confuses AI), RAIL "registers" your entries. For every query, it selectively fetches the 4 most relevant entries from your database, ensuring high-fidelity recall without context bloat.</li>
@@ -3113,17 +3132,41 @@
     document.getElementById('safe-policy').value = state.safePolicy;
     document.getElementById('safe-policy-val').textContent = state.safePolicy;
     
-    document.getElementById('safe-harm').addEventListener('input', (e) => document.getElementById('safe-harm-val').textContent = e.target.value);
-    document.getElementById('safe-offensive').addEventListener('input', (e) => document.getElementById('safe-offensive-val').textContent = e.target.value);
-    document.getElementById('safe-violence').addEventListener('input', (e) => document.getElementById('safe-violence-val').textContent = e.target.value);
-    document.getElementById('safe-medical').addEventListener('input', (e) => document.getElementById('safe-medical-val').textContent = e.target.value);
-    document.getElementById('safe-policy').addEventListener('input', (e) => document.getElementById('safe-policy-val').textContent = e.target.value);
+    document.getElementById('safe-harm').addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('safe-harm-val').textContent = val;
+        state.safeHarm = val;
+    });
+    document.getElementById('safe-offensive').addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('safe-offensive-val').textContent = val;
+        state.safeOffensive = val;
+    });
+    document.getElementById('safe-violence').addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('safe-violence-val').textContent = val;
+        state.safeViolence = val;
+    });
+    document.getElementById('safe-medical').addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('safe-medical-val').textContent = val;
+        state.safeMedical = val;
+    });
+    document.getElementById('safe-policy').addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('safe-policy-val').textContent = val;
+        state.safePolicy = val;
+    });
 
     document.getElementById('temperature').addEventListener('input', (e) => {
-        document.getElementById('temp-val').textContent = e.target.value;
+        const val = parseFloat(e.target.value);
+        document.getElementById('temp-val').textContent = val;
+        state.temperature = val;
     });
     document.getElementById('cot-depth').addEventListener('input', (e) => {
-        document.getElementById('cot-val').textContent = e.target.value;
+        const val = parseInt(e.target.value, 10);
+        document.getElementById('cot-val').textContent = val;
+        state.cotDepth = val;
     });
 
     appendMessage('system', 'System initialized. Ready for operations.');
@@ -3789,6 +3832,59 @@ You have search access via <search_web query="..."></search_web>.
         return fullText;
     }
 
+    // Mathematical Claims Logic Auditor (Programmatic Firewalls)
+    function auditMathematicalClaims(text) {
+        if (!state.enableFirewall) return null;
+        
+        const warnings = [];
+        let match;
+        
+        // 1. Fraction and Percentage discrepancy audit
+        // Look for patterns like: "X / Y" or "X out of Y", followed by some words, then "Z%"
+        const fractionRegex = /(\d+)\s*(?:\/|out\s+of)\s*(\d+)\s*(?:[^%.\n]{1,80}?)\s*(\d+(?:\.\d+)?)\s*%/gi;
+        fractionRegex.lastIndex = 0;
+        while ((match = fractionRegex.exec(text)) !== null) {
+            const num = parseFloat(match[1]);
+            const den = parseFloat(match[2]);
+            const reportedPercent = parseFloat(match[3]);
+            
+            if (den !== 0) {
+                const actualPercent = (num / den) * 100;
+                if (Math.abs(actualPercent - reportedPercent) > 1.0) {
+                    warnings.push(`Claimed fraction <strong>${num}/${den}</strong> is stated as <strong>${reportedPercent}%</strong>, but actual calculated value is <strong>${actualPercent.toFixed(1)}%</strong>.`);
+                }
+            }
+        }
+
+        // 2. Addition discrepancy audit (e.g. "X + Y = Z")
+        const addRegex = /(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*=\s*(\d+(?:\.\d+)?)/gi;
+        addRegex.lastIndex = 0;
+        while ((match = addRegex.exec(text)) !== null) {
+            const a = parseFloat(match[1]);
+            const b = parseFloat(match[2]);
+            const reported = parseFloat(match[3]);
+            const actual = a + b;
+            if (Math.abs(actual - reported) > 0.01) {
+                warnings.push(`Claimed addition <strong>${a} + ${b} = ${reported}</strong> is incorrect; actual calculated value is <strong>${actual}</strong>.`);
+            }
+        }
+
+        // 3. Multiplication discrepancy audit (e.g. "X * Y = Z")
+        const multRegex = /(\d+(?:\.\d+)?)\s*(?:\*|x)\s*(\d+(?:\.\d+)?)\s*=\s*(\d+(?:\.\d+)?)/gi;
+        multRegex.lastIndex = 0;
+        while ((match = multRegex.exec(text)) !== null) {
+            const a = parseFloat(match[1]);
+            const b = parseFloat(match[2]);
+            const reported = parseFloat(match[3]);
+            const actual = a * b;
+            if (Math.abs(actual - reported) > 0.01) {
+                warnings.push(`Claimed multiplication <strong>${a} × ${b} = ${reported}</strong> is incorrect; actual calculated value is <strong>${actual}</strong>.`);
+            }
+        }
+        
+        return warnings.length > 0 ? warnings : null;
+    }
+
     // Isolated render function for faster streaming updates
     function renderStreamingContent(text, container) {
         if (!text) return;
@@ -3807,7 +3903,7 @@ You have search access via <search_web query="..."></search_web>.
         }
 
         const sanitizeOptions = {
-            ALLOWED_ATTR: ['class', 'style', 'data-pmid', 'href', 'target'],
+            ALLOWED_ATTR: ['id', 'class', 'style', 'data-pmid', 'href', 'target', 'rel', 'src', 'alt', 'title'],
             ALLOWED_TAGS: ['div', 'span', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'a', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'table', 'thead', 'tbody', 'tr', 'th', 'td']
         };
 
@@ -3919,7 +4015,23 @@ You have search access via <search_web query="..."></search_web>.
             let parsedReplies = marked.parse(combinedReplies);
             parsedReplies = parsedReplies.replace(/\((PM\s*ID:?\s*(\d+))\)/gi, '<span class="citation-link" data-pmid="$2">($1)</span>')
                                          .replace(/\((PM:?\s*(\d+))\)/gi, '<span class="citation-link" data-pmid="$2">($1)</span>');
-            replyArea.innerHTML = DOMPurify.sanitize(parsedReplies, sanitizeOptions);
+            let sanitizedHtml = DOMPurify.sanitize(parsedReplies, sanitizeOptions);
+            
+            // Programmatic Firewalls: Mathematical Claim Auditing
+            const mathWarnings = auditMathematicalClaims(combinedReplies);
+            if (mathWarnings) {
+                const warningHtml = `<div class="logic-auditor-warning" style="margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(239, 68, 68, 0.06); border-left: 4px solid #ef4444; border-radius: 0.375rem; color: #f87171; font-size: 0.8rem; font-family: sans-serif;">
+                    <div style="font-weight: bold; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; color: #fca5a5;">
+                        <span>⚠️</span> LOGIC AUDITOR FLAG: Mathematical Inconsistency Detected
+                    </div>
+                    <ul style="margin: 0; padding-left: 1.25rem; list-style-type: disc;">
+                        ${mathWarnings.map(w => `<li style="margin-bottom: 0.25rem; line-height: 1.45;">${w}</li>`).join('')}
+                    </ul>
+                </div>`;
+                sanitizedHtml += warningHtml;
+            }
+            
+            replyArea.innerHTML = sanitizedHtml;
             replyArea.style.display = 'block';
         } else {
             // Reply area stays as it is if streaming and only thinking so far
